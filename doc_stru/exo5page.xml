@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="exo5page.xsl"?>
+<exo>
+    <title>5.Le domeur</title>
+    <description><p>Cet exercice concerne à construire des feuilles de styles pour réaliséer les traitement visés. Le fichier de travail est:</p>
+    <fichier>Cliquez ici pour le fichier de travail</fichier>
+    </description>
+    <exercices>
+        <phase1>
+        <question>1.Afficher le nom de l'auteur, le titre du poème, la date, et le recueil, dans cet ordre et au sein
+            d'une page HTML bien formée.</question>
+        <fichierXsl>Cliquez ici pour le fichier XSLT</fichierXsl>
+        <resultat>Cliquez ici pour voir le resultat</resultat>
+        </phase1>
+        <phase2>
+            <question>2.Afficher le titre et la date du poème, les vers les uns après les autres, sans balise (sortie texte
+                brut)</question>
+            <fichierXsl>Cliquez ici pour le fichier XSLT</fichierXsl>
+            <resultat>Cliquez ici pour voir le resultat</resultat>
+        </phase2>
+        <phase3>
+            <question>3.Afficher le 3ème vers de chaque groupe de vers au sein d'une page HTML bien formée.</question>
+            <fichierXsl>Cliquez ici pour le fichier XSLT</fichierXsl>
+            <resultat>Cliquez ici pour voir le resultat</resultat>
+        </phase3>
+        <phase4>
+            <question>4.Afficher seulement le 1er quatrain au sein d'une page HTML bien formée.</question>
+            <fichierXsl>Cliquez ici pour le fichier XSLT</fichierXsl>
+            <resultat>Cliquez ici pour voir le resultat</resultat>
+        </phase4>
+        <phase5>
+            <question>5.Afficher chaque vers précédé de son numéro d'ordre au sein du groupe de vers (lg).</question>
+            <fichierXsl>Cliquez ici pour le fichier XSLT</fichierXsl>
+            <resultat>Cliquez ici pour voir le resultat</resultat>
+        </phase5>
+        <phase6>
+            <question>6.Idem en ajoutant à chaque groupe de vers son numéro d'ordre.</question>
+            <fichierXsl>Cliquez ici pour le fichier XSLT</fichierXsl>
+            <resultat>Cliquez ici pour voir le resultat</resultat>
+        </phase6>
+        <phase7>
+            <question>7.Engendrer une page HTML bien formée dans laquelle le poème (seul, sans titre) est au sein
+                d'un tableau, avec une ligne par vers, et une ligne entre chaque strophe. Penser à aligner les
+                lignes à gauche.</question>
+            <fichierXsl>Cliquez ici pour le fichier XSLT</fichierXsl>
+            <resultat>Cliquez ici pour voir le resultat</resultat>
+        </phase7>
+        <phase8>
+            <question>8.Afficher les vers qui contiennent un point-virgule ou deux points (:) (format texte brut)</question>
+            <fichierXsl>Cliquez ici pour le fichier XSLT</fichierXsl>
+            <resultat>Cliquez ici pour voir le resultat</resultat>
+        </phase8>
+        <phase9>
+            <question>9.Afficher les quatrains en gras et les tercets en italiques au sein d'une page HTML bien formée.</question>
+            <fichierXsl>Cliquez ici pour le fichier XSLT</fichierXsl>
+            <resultat>Cliquez ici pour voir le resultat</resultat>
+        </phase9>
+    </exercices>
+</exo>

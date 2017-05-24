@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="exo1page.xsl"?>
+<exo>
+    <Title>1. Une bouteille d'eau</Title>
+  
+        <description>
+        <p>Il donne un article sur différentes bouteilles d'eau et leurs teneurs:</p>
+        <p>"Une bouteille d'eau Cristaline de 150 cl contient par litre 71 mg d'ions positifs calcium, et
+            5,5 mg d'ions positifs magnésium. On y trouve également des ions négatifs comme des
+            chlorures à 20 mg par litre et des nitrates avec 1 mg par litre. Elle est recueillie à St-Cyr la
+            Source, dans le département du Loiret. Son code barre est 3274080005003 et son pH est de
+            7,45. Comme la bouteille est sale, quelques autres matériaux comme du fer s'y trouvent en
+            suspension.</p>
+        <p>Une seconde bouteille d'eau Cristaline a été, elle, recueillie à la source d'Aurèle dans les
+            Alpes Maritimes. La concentration en ions calcium est de 98 mg/l, et en ions magnésium de
+            4 mg/l. Il y a 3,6 mg/l d'ions chlorure et 2 mg/l de nitrates, pour un pH de 7,4. Le code barre
+            de cette bouteille de 50 cl est 3268840001008.</p>
+        <p>Une bouteille de même contenance est de marque Volvic, et a été puisée à... Volvic, bien
+            connu pour ses sources donnant un pH neutre de 7. Elle comprend 11,5 mg/l d'ions calcium,
+            8,0 mg/l d'ions magnésium, 13,5 mg/l d'ions chlorures et 6,3 mg/l d'ions nitrates. Elle contient
+            également des particules de silice. Son code barre est 3057640117008."</p>
+            <p>À notre avis, les informations utilisables dans cet article est les données de teneurs et des référence de différents marques de l'eau.Donc j'extrait surtout ces informations pour créer un fichier XML.</p>
+            
+        <p>Pour voir ces informations extraites d'une manière plus claire, on essaie d'y ajouter un XSL pour les affichier dans un tableau HTML.</p>
+            <a1>Cliquez ici pour le fichier XML</a1>
+            <a2>Cliquer ici pour le fichier XSLT</a2>
+            <a3>Cliquer ici pour le tableau</a3>
+        </description>
+        
+        
+        
+        
+    
+</exo>

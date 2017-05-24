@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="exo7page.xsl"?>
+<exo>
+    <title>7.Recommandation XSLT 1.0</title>
+   <phase1>
+       <title>Phase 1 : document et grammaire</title>
+       <description>Le premier exercice est facile: on peut ajouter les informations personnelles sous forme de commentaire, et Oxygen peut vérifier la bonne formation du document et permet de générer le DTD.</description>
+       <fichier>Cliquez ici pour le fichier XML</fichier>
+       <fichierDTD>Le fichier DTD généré est:</fichierDTD>
+       <DTD>
+           &lt;?xml encoding=&quot;UTF-8&quot;?&gt;
+           
+           &lt;!ELEMENT doc (taggersent)+&gt;
+           &lt;!ATTLIST doc
+           xmlns CDATA #FIXED ''&gt;
+           
+           &lt;!ELEMENT taggersent (taggertoken)+&gt;
+           &lt;!ATTLIST taggersent
+           xmlns CDATA #FIXED ''&gt;
+           
+           &lt;!ELEMENT taggertoken EMPTY&gt;
+           &lt;!ATTLIST taggertoken
+           xmlns CDATA #FIXED ''
+           lemma CDATA #REQUIRED
+           pos CDATA #REQUIRED
+           wordform CDATA #REQUIRED&gt;
+       </DTD>
+   </phase1>
+    <phase2>
+        <title>Phase 2 : définir des requêtes xpath</title>
+        <question1>
+            <description>(1).Rechercher tous les NOM</description>
+            <xpath>//taggertoken[contains(@pos,&#x00a0;&#x201d;NOM&quot;)]</xpath>
+        </question1>
+        <question2>
+            <description>(2).Rechercher tous les VERBE</description>
+            <xpath>//taggertoken[contains(@pos,&#x00a0;&quot;VER&quot;)]</xpath>
+        </question2>
+        <question3>
+            <description>(3).Rechercher tous les NOM précédés d’un DET</description>
+            <xpath>//taggertoken[contains(@pos,&quot;NOM&quot;)][preceding-sibling::*[1][contains(@pos,&quot;DET&quot;)]] </xpath>
+        </question3>
+        <question4>
+            <description>(4).Rechercher toutes les séquences NOM ADJ ou ADJ NOM</description>
+            <xpath>//taggertoken[contains(@pos,&quot;ADJ&quot;)][preceding-sibling::*[1][contains(@pos,&quot;NOM&quot;)]] | //taggertoken[contains(@pos,&quot;NOM&quot;)][following-sibling::*[1][contains(@pos,&quot;ADJ&quot;)]] | //taggertoken[contains(@pos,&quot;NOM&quot;)][preceding-sibling::*[1][contains(@pos,&quot;ADJ&quot;)]] | //taggertoken[contains(@pos,&quot;ADJ&quot;)][following-sibling::*[1][contains(@pos,&quot;NOM&quot;)]]</xpath>
+        </question4>
+        <question3>
+            <description>(5).Rechercher tous les NOM précédés d’un DET</description>
+            <xpath>//taggertoken[contains(@pos,&quot;DET&quot;)][following-sibling::*[1][contains(@pos,&quot;NOM&quot;)]]| //taggertoken[contains(@pos,&quot;NOM&quot;)][preceding-sibling::*[1][contains(@pos,&quot;DET&quot;)]] </xpath>
+        </question3>
+    </phase2>
+    <phase3>
+        <title>Phase 3 : transformation xslt</title>
+        <etape1>
+            <description>Après avoir établi une feuille de styles pour formater le document XML en HTML, à l'aide des commandes &#60;xsl:choose&#62;, on peut afficher les contenus différents selon des conditions des manières différentes, comme &#34;les déterminants au féminin apparaîtront en
+            rouge et les déterminants masculins en bleu &#34;.</description>
+        <fichierXsl>Cliquez ici pour le fichier XSLT</fichierXsl>
+        <resultat>Cliquer pour voir le page de résultat</resultat>
+        </etape1>
+        <etape2>
+            <description>Pour sortir un fichier de XML, il y a une commande importante à connaître
+                &#60;xsl: element&#62;, cette commande permet de créer des balises dans le fichier de sortie, la seule chose à définir est le nom de balise, par exemple: &#60;xsl:element name=&#34; taggersent&#34;&#62; permet de créer une balise &#60;taggersent&#62;, et le &#60;/element&#62; est la balise ferme, soit &#60;/taggersent&#62;, de plus on peut aussi utiliser une valeur d’un attribut ou de contenu texte comme le nom, et il faut utiliser un peu l’expression de Xpath, par exemple, si on veut créer une balise dont le nom est la valeur de  balise de pos, il faut écrire comme &#60;xsl:element name=&#34; {@pos}&#34;&#62;
+                
+                Afin de créer un fichier XML conformément aux demandes, il faut penser aux différentes situations de l’attribut &#34; pos &#34;: pos est vide, pos n’a qu’une catégorie de nom et pos a catégorie de nom et le nom et genre, par conséquent, il faut utiliser les phrases de condition &#34; if &#34;, le logique est :
+                si le pos n’est pas vide, on peut traiter ce pos, puis il faut vérifier le contenu de &#34; pos &#34;, si &#34; pos &#34; contient &#34; : &#34;, ça veut dire qu’il y a plusieurs informations et on a besoin la partie avant &#34; : &#34;, ici, il faut utiliser une expression &#34; substring-before(la localisation, string) &#34;qui permet de extrait la partie de cette localisation avant le &#34; string &#34;, dans cette question il faut être &#60;xsl:element name=&#34; {substring-before(@pos,’:’)} &#34;&#62;, et si &#34; pos &#34; n’a pas de &#34; : &#34;, on prend tout le contenu de &#34; pos &#34;. 
+                
+                Pour l’extension, il faut juste ajouter une commande de &#34; xsl:attibut name=‘gram’ &#34;, puis définir le contenu. A la fin, on peut obtenir le fichier XML à l'aide de commande &#60;xslproc&#62;</description>
+            <commande>xsltproc exs3_2.xsl rec_xslt.tag.xml &gt; res.xml</commande>
+            <fichierXsl>Cliquez ici pour le fichier XSLT</fichierXsl>
+            <resultat>Cliquer pour voir le fichier XML</resultat>
+        </etape2>
+    </phase3>
+</exo>

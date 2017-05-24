@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="Npage.xsl"?>
+<contacts>
+    <title>Contact Nous</title>
+    <profil1>
+        <nom>YANG Mengwei</nom>
+        <mail>yang.mengwei@icloud.com</mail>
+        <ecol>Université Sorbonne Nouvelle Paris3</ecol>
+        
+    </profil1>
+    <profil2>
+        <nom>Li Yixuan</nom>
+        <mail>shinmanoko@gmail.com</mail>
+        <ecol>Université Paris Nanterre</ecol>
+    </profil2>
+</contacts>

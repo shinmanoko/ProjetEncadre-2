@@ -1,0 +1,16 @@
+<?xml encoding="UTF-8"?>
+
+<!ELEMENT doc (taggersent)+>
+<!ATTLIST doc
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT taggersent (taggertoken)+>
+<!ATTLIST taggersent
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT taggertoken EMPTY>
+<!ATTLIST taggertoken
+  xmlns CDATA #FIXED ''
+  lemma CDATA #REQUIRED
+  pos CDATA #REQUIRED
+  wordform CDATA #REQUIRED>

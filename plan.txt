@@ -1,6 +1,0 @@
-Présentation—->Projet（Perl）  corpus简介（RSS 介绍） 选的词 目的 流程图
-Boite à outil 1   目的 介绍script 里面的commandes 结果 （截取titre和description）
-Boite à outil 2  目的 介绍script（treetager和别的它作用一样的／两种sorties） 里面的commandes 结果（两种格式 xml／txt）
-Boite à outil 3   目的（POS） 介绍script（三种方法） 里面的commandes 结果（词组）
-Boite à outil 4   目的  介绍软件 wine graphe
-Conclusion	Anlyses

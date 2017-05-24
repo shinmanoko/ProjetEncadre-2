@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="exo11page.xsl"?>
+<exo>
+    <title>11. La promesse &amp; the promise</title>
+    <partie1>
+    <title>Partie I. Alignement lepromose-lapromesse</title>
+    <question1>
+        <description>
+            Question 1 : décrire brièvement les données à traiter et le rôle de chacun des fichiers
+        </description>
+        <reponse>
+            Contenant 2 fichiers HTML, un XML et deux fichiers de grammaire, ce document est un corpus parallèle français-anglais de catégorie littérature récupéré du site TransRead, un site multilingue ayant pour l'objectif de contribuer aux &quot;lecture et interaction bilingues enrichies par les données d'alignement&quot;. 
+            Liste de document :
+            lapromesse.html &amp; thepromise.html  &gt;&gt;&gt;  les sites d'où les données sont récupérées
+                thepromise-lapromesse.xml  &gt;&gt;&gt;  le fichier XML
+                transread_v1-2.dtd  &gt;&gt;&gt;  Document Type Definition
+                transread_v1-2.xsd  &gt;&gt;&gt;  XML Schemas Definition
+            Le document DTD et le document Schéma tous servent à construire et générer une grammaire liée au document XML, parmi les quels DTD est une pile de règles et Schéma un document XML contenant les règles.
+        </reponse>
+    </question1>
+        <question2>
+        <description>
+            Question 2 : à partir du fichier lepromose-lapromesse.xml, écrire une feuille de style XSLT permettant d'afficher dans un tableau HTML l'alignement des 2 volets (une ligne du tableau devant contenir 2 segments alignés)
+        </description>
+        <lien>Consultez le tableau HTML</lien>
+        <fichierXml>Cliquez ici pour le fichier XML</fichierXml>
+        <fichierXsl>Cliquez ici pour le fichier XSLT</fichierXsl>
+    </question2>
+        <question3>
+        <description>
+            Question 3 : à partir du fichier lepromose-lapromesse.xml, écrire une feuille de style XSLT permettant d'afficher uniquement le volet français (idem pour le volet anglais)
+        </description>
+        
+        <fichierfr>Cliquez ici pour le fichier XSLT pour le français</fichierfr>
+            <resultatfr>Cliquez ici pour voir le résultat de volet de français</resultatfr>
+        <fichieren>Cliquez ici pour le fichier XSLT pour l'anglais</fichieren>
+            <resultaten>Cliquez ici pour voir le résultat de volet d'anglais</resultaten>
+    </question3>
+    </partie1>
+    <partie2>
+        <title>Partie II. Sentence Alignment Confidence Annotation</title>
+        <question1>
+            <description>
+                Question 1 : décrire brièvement les données à traiter et le rôle de chacun des fichiers
+            </description>
+            <reponse>
+                Le texte des trois fichiers txt fait partie dans le corpus &quot;LIMSI sentence alignment confidence annotation corpus&quot; produit par le site TransRead et détaillé dans le fichier README.
+                Ce document contient pour chaque paire de phrases alignées (avec un numéro en tant que id) 4 lignes : phrase de source en anglais, phrase de cible en français, un première annotation par un annotateur et un deuxième annotation par un autre annotateur (soit en total 3 annotateurs pour ces 1800 paires de phrases).
+                Les annotaions distinguent les paires en 5 groupes : &quot;sure&quot;, &quot;partial&quot;, &quot;unperfect&quot;, &quot;not corresponding&quot; et &quot;undecidable&quot;, selon le niveau de correspondance entre les phrases alignées.
+            </reponse>
+        </question1>
+        <question2>
+            <description>
+                Question 2 : à partir des 3 fichiers 3000-3599.txt, 3600-4199.txt, 4200-4799.txt, proposez une structure XML (une grammaire donc) pour représenter les informations contenues dans ces fichiers. On pourra automatiser la construction du fichier XML final via un script Perl ou Python.
+                
+                
+            </description>
+            <rep>Voici le code Python :</rep>
+            <code>#! /usr/bin/Python
+                
+                import os, sys
+                import glob
+                import xml.dom.minidom
+                from PIL import Image
+                
+                
+                xml_file=open(('SentenceAlignmentConfidenceAnnotation.xml'), 'w')
+                xml_file.write('&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;\n')
+                xml_file.write('&lt;SentenceAlignmentConfidenceAnnotation&gt;\n')
+                
+                txt_dir = &quot;txt/&quot;
+                fileList=os.listdir(txt_dir)
+                
+                for fichier in fileList:
+                gt = open(txt_dir+fichier).read().splitlines()
+                for i in range(len(gt)):
+                nb = i%5
+                if nb == 1:
+                xml_file.write('	&lt;ID&gt;\n')
+                xml_file.write('        '+gt[i-1]+'\n')
+                xml_file.write('	&lt;/ID&gt;\n')
+                xml_file.write('	&lt;Volets&gt;\n')
+                xml_file.write('		&lt;En&gt;\n')
+                xml_file.write('            '+gt[i]+'\n')
+                xml_file.write('		&lt;/En&gt;\n')
+                xml_file.write('		&lt;Fr&gt;\n')
+                xml_file.write('            '+gt[i+1]+'\n')
+                xml_file.write('		&lt;/Fr&gt;\n')
+                xml_file.write('	&lt;/Volets&gt;\n')
+                xml_file.write('	&lt;Annotations&gt;\n')
+                xml_file.write('	  &lt;annotation1&gt;\n')
+                xml_file.write('            '+gt[i+2]+'\n')
+                xml_file.write('	  &lt;/annotation1&gt;\n')
+                xml_file.write('	  &lt;annotation2&gt;\n')
+                xml_file.write('            '+gt[i+3]+'\n')
+                xml_file.write('	  &lt;/annotation2&gt;\n')
+                xml_file.write('	&lt;/Annotations&gt;\n')
+                
+                xml_file.write('&lt;/SentenceAlignmentConfidenceAnnotation&gt;\n')
+                
+            </code>
+            <fichierPy>Cliquez ici pour télécharger le programme Python</fichierPy>
+            
+            <fichierXml>Cliquez ici pour le fichier XML</fichierXml>
+        </question2>
+        <question3>
+            <description>
+                Question 3 : à partir du ou des fichiers XML produits à la question 2, construire une feuille de styles XSLT pour afficher en parallèle les 2 volets de l’alignement (EN vs FR)
+            </description>
+            <lien>Consultez le tableau HTML</lien>
+            
+            <fichier>Cliquez ici pour le fichier XSLT</fichier>
+        </question3>
+    </partie2>
+</exo>

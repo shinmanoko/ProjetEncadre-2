@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article>
+<partie>
+<title>Cristaline</title>
+<contenance>150cl</contenance>
+<Ions1>71mg/l</Ions1>
+<Ions2>5.5mg/l</Ions2>
+<Ions3>20mg/l</Ions3>
+<Ions4>1mg/l</Ions4>
+<particules>Fer</particules>
+<source>St-Cry la Source, Loiret</source>
+<code>3274080005003</code>
+<ph>7,45</ph>
+</partie>
+<partie>
+<title>Cristaline2</title>
+<contenance>50cl</contenance>
+<Ions1>98mg/l</Ions1>
+<Ions2>4mg/l</Ions2>
+<Ions3>3,6mg/l</Ions3>
+<Ions4>2mg/l</Ions4>
+<particules>Rien</particules>
+<source>Aurèle, les Alpes Maritimes</source>
+<code>3268840001008</code>
+<ph>7,4</ph>
+</partie>
+<partie>
+<title>Volvic</title>
+<contenance>150cl</contenance>
+<Ions1>11,5mg/l</Ions1>
+<Ions2>8mg/l</Ions2>
+<Ions3>13,5mg/l</Ions3>
+<Ions4>6,3mg/l</Ions4>
+<particules>Silice</particules>
+<source>Volvic</source>
+<code>3057640117008</code>
+<ph>7</ph>
+</partie>
+</article>

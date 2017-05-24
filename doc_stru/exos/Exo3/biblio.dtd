@@ -1,0 +1,72 @@
+<?xml encoding="UTF-8"?>
+
+<!ELEMENT bib (livre,article)>
+<!ATTLIST bib
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT livre (titre,contenu,information)>
+<!ATTLIST livre
+  xmlns CDATA #FIXED ''
+  avis_personnel CDATA #REQUIRED>
+
+<!ELEMENT article (titre,auteur,nom_journal,annee,adresse)>
+<!ATTLIST article
+  xmlns CDATA #FIXED ''
+  avis_personnel CDATA #REQUIRED>
+
+<!ELEMENT contenu (page|tome)+>
+<!ATTLIST contenu
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT information (auteur,editeur,collection,langue,iban)>
+<!ATTLIST information
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT nom_journal (#PCDATA)>
+<!ATTLIST nom_journal
+  xmlns CDATA #FIXED ''
+  journal CDATA "Feuille de chou">
+
+<!ELEMENT annee (#PCDATA)>
+<!ATTLIST annee
+  xmlns CDATA #FIXED ''
+  annee_publication (2000|2001|2002|avant_2000|inconnue) "inconnue">
+
+<!ELEMENT adresse (#PCDATA)>
+<!ATTLIST adresse
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT page (#PCDATA)>
+<!ATTLIST page
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT tome EMPTY>
+<!ATTLIST tome
+  xmlns CDATA #FIXED ''
+  nb_pages CDATA #IMPLIED
+  Tome_soustitre CDATA #IMPLIED>
+
+<!ELEMENT editeur (#PCDATA)>
+<!ATTLIST editeur
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT collection (#PCDATA)>
+<!ATTLIST collection
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT langue (#PCDATA)>
+<!ATTLIST langue
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT iban (#PCDATA)>
+<!ATTLIST iban
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT titre (#PCDATA)>
+<!ATTLIST titre
+  xmlns CDATA #FIXED ''
+  soustitre CDATA #IMPLIED>
+
+<!ELEMENT auteur (#PCDATA)>
+<!ATTLIST auteur
+  xmlns CDATA #FIXED ''>

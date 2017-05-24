@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="exo9page.xsl"?>
+<exo>
+    <title>9.Collections du musée des Augustin</title>
+    <question1>
+        <title>1.XML et JSON</title>
+        <Json>
+            <p1>JSON(JavaScript Object Notation ) est un format de données textuelles dérivé de la notation des objets du langage JavaScript. Il permet de représenter de l’information structurée comme le permet XML par exemple.</p1>
+            <p2>Un document JSON a pour fonction de représenter de l'information accompagnée d'étiquettes permettant d'en interpréter les divers éléments, sans aucune restriction sur le nombre de celles-ci.
+                Un document JSON ne comprend que deux types d'éléments structurels :</p2>
+            <list1>
+                <l1>Des ensembles de paires nom / valeur ;</l1>
+                <l2>Des listes ordonnées de valeurs.</l2>
+            </list1>
+            <p3>Ces mêmes éléments représentent trois types de données :</p3>
+            <list2>
+                <l>Des objets ;</l>
+                <l>Des tableaux ;</l>
+                <l>Des valeurs génériques de type tableau, objet, booléen, nombre, chaîne ou null.</l>
+            </list2>
+            <plus>Plus d'information sur la présentation sur</plus><site>Wikipédia</site>
+        </Json>
+        <comparaison>
+            <p>La première différence est que XML encadre chaque domaine d’information par deux balises pendant que JSON met le domaine d’information entre  guillemets avec le nom du domaine devant l’e contenum, par exemple:</p>
+            <p>XML: &#60;domaine&#62;information&#60;/domaine&#62;</p>
+            <p>JSON: domaine:  ‘information’</p>
+            <p>Dans XML, les différents domaines se séparent l’un à l’autre par les balises alors que dans JSON, les différentes informations sont séparées par virgule.</p>
+            <p>De plus, pour chaque fichier XML il y a une balise de racine. Dans le fichier JSON, il n’y en a pas mais pour chaque élément il y a une racine, dans cet exemple, c’est  ‘fields’</p>
+            <p>Par ailleurs, dans le contenu de XML, c’est possible d’utiliser les lettres accentuées, mais dans JSON c’est strictement nécessaire d’utiliser les espace caractères. Comme: Entrée(XML), Entr\u00e9(JSON)</p>
+        </comparaison>
+    </question1>
+    <question2>
+        <title>2.A partir de l’inventaire fourni au format XML, construire sa DTD.</title>
+        <dsc>Voici le DTD engendré:</dsc>
+        <dtd>&lt;?xml encoding=&quot;UTF-8&quot;?&gt;
+            
+            &lt;!ELEMENT document (oeuvre)+&gt;
+            &lt;!ATTLIST document
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT oeuvre (numeroInventaire,numeroAcquisition?,modeAcquisition?,
+            donateurVendeur?,dateAcquis?,notesAcquisition?,
+            notesAcquisition2?,prixAchat?,dateAffec?,dateEntre?,
+            designation?,designation2?,designation3?,domaine?,
+            inscriptionType1?,inscriptionType2?,
+            inscriptionEmplace?,inscriptionTranscr?,matiere?,
+            technique?,mesure1?,mesure2?,mesure3?,
+            precisionAuteur1?,auteur1?,precisionAuteur2?,auteur2?,
+            executant?,datation1?,datation2?,collecteur?,
+            siteDeCollecte?,dateDeCollecte?,commanditaire?,
+            fonctionUsage?,provGeo?,image?,commons?)&gt;
+            &lt;!ATTLIST oeuvre
+            xmlns CDATA #FIXED ''
+            id NMTOKEN #REQUIRED&gt;
+            
+            &lt;!ELEMENT numeroInventaire (#PCDATA)&gt;
+            &lt;!ATTLIST numeroInventaire
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT numeroAcquisition (#PCDATA)&gt;
+            &lt;!ATTLIST numeroAcquisition
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT modeAcquisition (#PCDATA)&gt;
+            &lt;!ATTLIST modeAcquisition
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT donateurVendeur (#PCDATA)&gt;
+            &lt;!ATTLIST donateurVendeur
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT dateAcquis (#PCDATA)&gt;
+            &lt;!ATTLIST dateAcquis
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT notesAcquisition (#PCDATA)&gt;
+            &lt;!ATTLIST notesAcquisition
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT notesAcquisition2 (#PCDATA)&gt;
+            &lt;!ATTLIST notesAcquisition2
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT prixAchat (#PCDATA)&gt;
+            &lt;!ATTLIST prixAchat
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT dateAffec (#PCDATA)&gt;
+            &lt;!ATTLIST dateAffec
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT dateEntre (#PCDATA)&gt;
+            &lt;!ATTLIST dateEntre
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT designation (#PCDATA)&gt;
+            &lt;!ATTLIST designation
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT designation2 (#PCDATA)&gt;
+            &lt;!ATTLIST designation2
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT designation3 (#PCDATA)&gt;
+            &lt;!ATTLIST designation3
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT domaine (#PCDATA)&gt;
+            &lt;!ATTLIST domaine
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT inscriptionType1 (#PCDATA)&gt;
+            &lt;!ATTLIST inscriptionType1
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT inscriptionType2 (#PCDATA)&gt;
+            &lt;!ATTLIST inscriptionType2
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT inscriptionEmplace (#PCDATA)&gt;
+            &lt;!ATTLIST inscriptionEmplace
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT inscriptionTranscr (#PCDATA)&gt;
+            &lt;!ATTLIST inscriptionTranscr
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT matiere (#PCDATA)&gt;
+            &lt;!ATTLIST matiere
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT technique (#PCDATA)&gt;
+            &lt;!ATTLIST technique
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT mesure1 (#PCDATA)&gt;
+            &lt;!ATTLIST mesure1
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT mesure2 (#PCDATA)&gt;
+            &lt;!ATTLIST mesure2
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT mesure3 (#PCDATA)&gt;
+            &lt;!ATTLIST mesure3
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT precisionAuteur1 (#PCDATA)&gt;
+            &lt;!ATTLIST precisionAuteur1
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT auteur1 (#PCDATA)&gt;
+            &lt;!ATTLIST auteur1
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT precisionAuteur2 (#PCDATA)&gt;
+            &lt;!ATTLIST precisionAuteur2
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT auteur2 (#PCDATA)&gt;
+            &lt;!ATTLIST auteur2
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT executant (#PCDATA)&gt;
+            &lt;!ATTLIST executant
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT datation1 (#PCDATA)&gt;
+            &lt;!ATTLIST datation1
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT datation2 (#PCDATA)&gt;
+            &lt;!ATTLIST datation2
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT collecteur (#PCDATA)&gt;
+            &lt;!ATTLIST collecteur
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT siteDeCollecte (#PCDATA)&gt;
+            &lt;!ATTLIST siteDeCollecte
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT dateDeCollecte (#PCDATA)&gt;
+            &lt;!ATTLIST dateDeCollecte
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT commanditaire (#PCDATA)&gt;
+            &lt;!ATTLIST commanditaire
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT fonctionUsage (#PCDATA)&gt;
+            &lt;!ATTLIST fonctionUsage
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT provGeo (#PCDATA)&gt;
+            &lt;!ATTLIST provGeo
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT commons (image)+&gt;
+            &lt;!ATTLIST commons
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT image (#PCDATA|page|thumbnail|url)*&gt;
+            &lt;!ATTLIST image
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT page (#PCDATA)&gt;
+            &lt;!ATTLIST page
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT thumbnail (#PCDATA)&gt;
+            &lt;!ATTLIST thumbnail
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT url (#PCDATA)&gt;
+            &lt;!ATTLIST url
+            xmlns CDATA #FIXED ''&gt;
+        </dtd>
+    </question2>
+    <question3>
+        <title>3.Classer par...</title>
+        <description>A partir de l’inventaire fourni au format XML, construire une feuille de styles XSLT minimale
+            pour afficher « proprement » le contenu de l’inventaire au format HTML en classant les
+            oeuvres par auteur.Si on veut classer les éléments par une certaine valeur, il faut utiliser &#60;xsl:sort&#62;</description>
+        <fichierXSL>Cliquez ici pour le fichier XSLT</fichierXSL>
+        <resultat>Cliquez ici pour voir le résultat</resultat>
+    </question3>
+    <question4>
+        <title>4.Que les références</title>
+        <description>Tout ce qu'on doit faire est de conserver que les références...</description>
+        <fichierXSL>Cliquez ici pour le fichier XSLT</fichierXSL>
+        <resultat>Cliquez ici pour voir le résultat</resultat>
+    </question4>
+    <question5>
+        <title>5.Afficher par cliquer</title>
+        <desc>Afin de permettant d’afficher le contenu complet en cliquant, on ajout des Javascript.</desc>
+        <fichierXSL>Cliquez ici pour le fichier XSLT</fichierXSL>
+        <resultat>Cliquez ici pour voir le résultat</resultat>
+    </question5>
+    <question6>
+        <title>6. de JSON à XML</title>
+        <desc>1. Python. En fait, il existe déjà des modules dans Python permettant de convertir JSON en dictionnaire ordinaire, et c'est possible de transférer ce dernier en JSON. Le plus simple est d'utiliser le module "Json2xml" qui convertit le fichier JSON en XML directement.</desc>
+        <codePy>from src.json2xml import Json2xml
+            
+            data=Json2xml.fromjsonfile('collections-du-musee-des-augustins-ville-de-toulouse.json').data
+            data_object=Json2xml(data)
+            x=data_object.json2xml()
+            with open(&quot;sortieXML.xml&quot;,&quot;w&quot;,-1,&quot;utf-8-sig&quot;) as fil:
+            fil.write(&quot;&lt;Document&gt;&quot;+&quot;\n&quot;+str(x)+&quot;\n&quot;+&quot;&lt;/Document&gt;&quot;)
+            
+        </codePy>
+        <fichierPython>Cliquez ici pour télécharger le script Python</fichierPython>
+        <resultat>Cliquez ici pour le fichier de résultat XML</resultat>
+        <desc2>2.Perl.Comme dans Python, il y a aussi un module concernant le XML qui s'appelle XML::Simple, et il y en a un autre pour le fichier JSON dont le nom est JSON. Si on peut télécharger ces deux modules de perl, avec le script au dessous, il est possible de convertir le fichier JSON en XML.</desc2>
+        <codePl>
+            #!/usr/bin/perl
+            
+            use strict;
+            
+            binmode STDOUT, &quot;utf-8&quot;;
+            use utf8;
+            use JSON;
+            use XML::Simple;
+            
+            #my $fh=$ARGV[0]
+            my $json;
+            {
+            local $/;
+            open my $fh, &quot;&lt;&quot;,&quot;collections-du-musee-des-augustins-ville-de-toulouse.json&quot;;
+            $json=&lt;$fh&gt;:
+            close $fh;
+            }
+            
+            my $data=decode_json($json);
+            open my $out1, &quot;&gt;:encoding(utf-8)&quot;, &quot;sortie.xml&quot;;
+            print $out1, &quot;&lt;?xml version=\&quot;1.0\&quot; encoding=\&quot;UTF-8\&quot; standalone=\&quot;yes\&quot;?&gt;\n&quot;;
+            print $out1, XMLout($data);
+            print $out1, &quot;\n&quot;;
+        </codePl>
+        <fichierPerl>Cliquez ici pour télécharger le script Perl</fichierPerl>
+    </question6>
+</exo>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="exo10page.xsl"?>
+<exo>
+    <title>10. « un conte... »</title>
+    <phase1>
+        <description>
+            Le conte de Raymond Queneau « un conte à votre façon » (cf lien supra) est à l'origine des romans dont vous êtes le héros. Il offre de multiples parcours.
+            Proposer une structure de document XML pour représenter ce conte et le passage d'un endroit du conte à un autre.
+            Essayer de construite une feuille de style permettant de réaliser, à partir du document XML obéissant à la structure choisi, un document HTML permettant la navigation effective d'un endroit du conte à l'autre.
+        </description>
+        <lien>Lien vers le conte</lien>
+        <fichierXml>Cliquez ici pour le fichier XML</fichierXml>
+        <fichierXsl>Cliquez ici pour le fichier XSLT</fichierXsl>
+    </phase1>
+</exo>

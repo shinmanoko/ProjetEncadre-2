@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="Home.xsl"?>
+<home>
+    <Principe>
+    <title>Bienvenue</title>
+    <description>Ce site est réalisé dans le cadre du cours de "Documents Structurés" de la première année du Master PluriTAL. Le but est de présenter les 
+        exercices faites pendnat le cours dont l'objectif est d'apprendre les langages XML, XSLT et XPath. Ce site est construit de fichiers XML, accompagnés de feuilles XSLT.</description>
+    </Principe>
+    <langages>
+        <title>Les langages</title>
+        <description>XML(Extensible Markup Language) est un langage de balisage permettant de définir ses propres balises et de décrire la structure logieque. 
+            XSL(eXtensible Stylesheet Language) est langage de description de feuilles de styles associé à XML.
+            XSLT(Extensible Stylesheet Language Transformations) est une partie de langage de XSL qui permet de transformer un document XML en document sous d'autres formes, comme HTML.
+        Les deux autres parties sont XPath et XSL-FO.</description>
+    </langages>
+    <outils>
+        <title>
+            Les outils
+        </title>
+        <description>L'éditeur qu'on utilise est Oxygen. C'est un logiciel polyvalent: il peut éditer le fichier XML, XSLT, CSS,DTD...de plus, il permet de 
+        générer fichier DTD et XML W3C schema à partir d'un fichier XML. W3C propose des cours en ligne sur XML, XSLT et Xpath, on peut y trouver des
+        colutions quand on rencontre des problèmes.</description>
+    </outils>
+</home>

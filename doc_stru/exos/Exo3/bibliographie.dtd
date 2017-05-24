@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT document (livre,article)>
+<!ATTLIST document
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT livre (titre,contenu,information)>
+<!ATTLIST livre
+  xmlns CDATA #FIXED ''
+  avis_personnel CDATA #REQUIRED>
+
+<!ELEMENT article (titre,auteur,journal,Date_Publication,adresse)>
+<!ATTLIST article
+  xmlns CDATA #FIXED ''
+  avis_personnel CDATA #REQUIRED>
+
+<!ELEMENT contenu (page|tome)+>
+<!ATTLIST contenu
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT information (auteur,editeur,collection,langue,iban)>
+<!ATTLIST information
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT journal (#PCDATA)>
+<!ATTLIST journal
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT Date_Publication (#PCDATA)>
+<!ATTLIST Date_Publication
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT adresse (#PCDATA)>
+<!ATTLIST adresse
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT page (#PCDATA)>
+<!ATTLIST page
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT tome (#PCDATA)>
+<!ATTLIST tome
+  xmlns CDATA #FIXED ''
+  nb_pages CDATA #REQUIRED>
+
+<!ELEMENT editeur (#PCDATA)>
+<!ATTLIST editeur
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT collection (#PCDATA)>
+<!ATTLIST collection
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT langue (#PCDATA)>
+<!ATTLIST langue
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT iban (#PCDATA)>
+<!ATTLIST iban
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT titre (#PCDATA)>
+<!ATTLIST titre
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT auteur (#PCDATA)>
+<!ATTLIST auteur
+  xmlns CDATA #FIXED ''>

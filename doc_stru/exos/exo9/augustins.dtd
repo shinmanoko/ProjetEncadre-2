@@ -1,0 +1,184 @@
+<?xml encoding="UTF-8"?>
+
+<!ELEMENT document (oeuvre)+>
+<!ATTLIST document
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT oeuvre (numeroInventaire,numeroAcquisition?,modeAcquisition?,
+                  donateurVendeur?,dateAcquis?,notesAcquisition?,
+                  notesAcquisition2?,prixAchat?,dateAffec?,dateEntre?,
+                  designation?,designation2?,designation3?,domaine?,
+                  inscriptionType1?,inscriptionType2?,
+                  inscriptionEmplace?,inscriptionTranscr?,matiere?,
+                  technique?,mesure1?,mesure2?,mesure3?,
+                  precisionAuteur1?,auteur1?,precisionAuteur2?,auteur2?,
+                  executant?,datation1?,datation2?,collecteur?,
+                  siteDeCollecte?,dateDeCollecte?,commanditaire?,
+                  fonctionUsage?,provGeo?,image?,commons?)>
+<!ATTLIST oeuvre
+  xmlns CDATA #FIXED ''
+  id NMTOKEN #REQUIRED>
+
+<!ELEMENT numeroInventaire (#PCDATA)>
+<!ATTLIST numeroInventaire
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT numeroAcquisition (#PCDATA)>
+<!ATTLIST numeroAcquisition
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT modeAcquisition (#PCDATA)>
+<!ATTLIST modeAcquisition
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT donateurVendeur (#PCDATA)>
+<!ATTLIST donateurVendeur
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT dateAcquis (#PCDATA)>
+<!ATTLIST dateAcquis
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT notesAcquisition (#PCDATA)>
+<!ATTLIST notesAcquisition
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT notesAcquisition2 (#PCDATA)>
+<!ATTLIST notesAcquisition2
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT prixAchat (#PCDATA)>
+<!ATTLIST prixAchat
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT dateAffec (#PCDATA)>
+<!ATTLIST dateAffec
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT dateEntre (#PCDATA)>
+<!ATTLIST dateEntre
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT designation (#PCDATA)>
+<!ATTLIST designation
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT designation2 (#PCDATA)>
+<!ATTLIST designation2
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT designation3 (#PCDATA)>
+<!ATTLIST designation3
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT domaine (#PCDATA)>
+<!ATTLIST domaine
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT inscriptionType1 (#PCDATA)>
+<!ATTLIST inscriptionType1
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT inscriptionType2 (#PCDATA)>
+<!ATTLIST inscriptionType2
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT inscriptionEmplace (#PCDATA)>
+<!ATTLIST inscriptionEmplace
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT inscriptionTranscr (#PCDATA)>
+<!ATTLIST inscriptionTranscr
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT matiere (#PCDATA)>
+<!ATTLIST matiere
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT technique (#PCDATA)>
+<!ATTLIST technique
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT mesure1 (#PCDATA)>
+<!ATTLIST mesure1
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT mesure2 (#PCDATA)>
+<!ATTLIST mesure2
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT mesure3 (#PCDATA)>
+<!ATTLIST mesure3
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT precisionAuteur1 (#PCDATA)>
+<!ATTLIST precisionAuteur1
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT auteur1 (#PCDATA)>
+<!ATTLIST auteur1
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT precisionAuteur2 (#PCDATA)>
+<!ATTLIST precisionAuteur2
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT auteur2 (#PCDATA)>
+<!ATTLIST auteur2
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT executant (#PCDATA)>
+<!ATTLIST executant
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT datation1 (#PCDATA)>
+<!ATTLIST datation1
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT datation2 (#PCDATA)>
+<!ATTLIST datation2
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT collecteur (#PCDATA)>
+<!ATTLIST collecteur
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT siteDeCollecte (#PCDATA)>
+<!ATTLIST siteDeCollecte
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT dateDeCollecte (#PCDATA)>
+<!ATTLIST dateDeCollecte
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT commanditaire (#PCDATA)>
+<!ATTLIST commanditaire
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT fonctionUsage (#PCDATA)>
+<!ATTLIST fonctionUsage
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT provGeo (#PCDATA)>
+<!ATTLIST provGeo
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT commons (image)+>
+<!ATTLIST commons
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT image (#PCDATA|page|thumbnail|url)*>
+<!ATTLIST image
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT page (#PCDATA)>
+<!ATTLIST page
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT thumbnail (#PCDATA)>
+<!ATTLIST thumbnail
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT url (#PCDATA)>
+<!ATTLIST url
+  xmlns CDATA #FIXED ''>
