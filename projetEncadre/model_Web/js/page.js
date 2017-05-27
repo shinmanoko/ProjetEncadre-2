@@ -2,6 +2,7 @@ var Page = (function() {
 
 	var $container = $( '#container' ),
 		$bookBlock = $( '#bb-bookblock' ),
+        $plusinfo=$('#plusinfo'),
 		$items = $bookBlock.children(),
 		itemsCount = $items.length,
 		current = 0,
@@ -86,6 +87,7 @@ var Page = (function() {
 			var $el = $( this ),
 				idx = $el.index(),
 				jump = function() {
+                    console.log(idx),
 					bb.jump( idx + 1 );
 				};
 			
@@ -94,7 +96,7 @@ var Page = (function() {
 			return false;
 			
 		} );
-
+        test();
 		// reinit jScrollPane on window resize
 		$( window ).on( 'debouncedresize', function() {
 			// reinitialise jScrollPane on the content div
@@ -103,6 +105,20 @@ var Page = (function() {
 
 	}
 
+    function test(){
+        $plusinfo.on( 'click', function() {
+				jump = function() {
+					bb.jump( 2 );
+				};
+			
+			current !== 2 ? closeTOC( jump ) : closeTOC();
+
+			return false;
+			
+		} );
+    }
+    
+    
 	function setJSP( action, idx ) {
 		
 		var idx = idx === undefined ? current : idx,

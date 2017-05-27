@@ -236,7 +236,7 @@ a{
 	margin: 0 auto;
 }
 .banner {
-background: url(../images/bg.jpg)no-repeat 0px 0px;
+background: url(../images/trump1.jpg)no-repeat 0px 0px;
 min-height:500px;
 background-size: cover;
 -o-background-size: cover;
@@ -1189,4 +1189,15 @@ font-size: 2.5em;
 	.contact_grid p {
 	font-size: 1.1em;
 	}
+}
+.little{
+    color: #013ADF;
+    font-size: 1.2em;
+}
+.bigImg{
+    width: 100%;
+    
+}
+.telechargement{
+    color: #F7819F;
 }
