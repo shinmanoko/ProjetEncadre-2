@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--                                                                                             -->
+<!--                                                                                             -->
+<!--                                     AirFrance DTD                                           -->
+<!--                                                                                             -->
+<!--                                                                                             -->
+
+<!ELEMENT teiCorpus.2               (teiHeader, TEI.2+)                                            >
+
+<!ELEMENT teiHeader                 (auteurs|fileDesc|encodingDesc|profileDesc|revisionDesc)*      >
+<!ATTLIST teiHeader                                    
+          date.created               CDATA                                            #IMPLIED
+          creator                    CDATA                                            #IMPLIED     >
+
+<!ELEMENT auteurs                   (referencesPersonnelles+)                                      >
+
+<!ELEMENT referencesPersonnelles    (nom,prenom,email)                                             >
+
+<!ELEMENT nom                       (#PCDATA)                                                      >
+
+<!ELEMENT prenom                    (#PCDATA)                                                      >
+    
+<!ELEMENT email                     (#PCDATA)                                                      >
+
+<!ELEMENT fileDesc                  (titleStmt|extent|publicationStmt|sourceDesc)*                 >
+
+<!ELEMENT titleStmt                 (title|respStmt|principal)*                                    >
+
+<!ELEMENT title                     (#PCDATA)                                                      >
+
+<!ELEMENT respStmt                  (resp, name)*                                                  >
+
+<!ELEMENT name                      (#PCDATA)                                                      >
+
+<!ELEMENT resp                      (#PCDATA)                                                      >
+
+<!ELEMENT principal                 (#PCDATA)                                                      >
+
+<!ELEMENT extent                    (#PCDATA)                                                      >
+
+<!ELEMENT publicationStmt           (availability|distributor|date)*                               >
+
+<!ELEMENT availability              (p+)                                                           >
+
+<!ELEMENT p                         (#PCDATA)                                                      >
+
+<!ELEMENT distributor               (#PCDATA)                                                      >
+
+<!ELEMENT date                      (#PCDATA)                                                      > 
+<!ATTLIST date                                   
+          value                      CDATA                                            #IMPLIED     >
+
+<!ELEMENT sourceDesc                (recordingStmt|scriptStmt|p)*                                  >
+
+<!ELEMENT recordingStmt             (p+)                                                           >
+
+<!ELEMENT scriptStmt                (p+)                                                           >
+
+<!ELEMENT encodingDesc              (projectDesc|editorialDecl)*                                   >
+
+<!ELEMENT projectDesc               (p+)                                                           >
+
+<!ELEMENT editorialDecl             (normalization)*                                               >
+
+<!ELEMENT normalization             (p+)                                                           >
+
+<!ELEMENT profileDesc               (particDesc)*                                                  >
+
+<!ELEMENT particDesc                (person+)*                                                     >
+
+<!ELEMENT person                    (p+)                                                           >
+<!ATTLIST person                                            
+          id                         ID                                               #REQUIRED
+          role                       CDATA                                            #REQUIRED    >
+
+<!ELEMENT revisionDesc              (change)*                                                      >
+
+<!ELEMENT change                    (date, respStmt, item)*                                        >
+
+<!ELEMENT item                      (#PCDATA)                                                      >
+
+<!ELEMENT TEI.2                     (teiHeader, text)                                              >
+
+<!ELEMENT text                      (group | body)                                                 >
+
+<!ELEMENT group                     (text+)                                                        >
+
+<!ELEMENT body                      (div)                                                          >
+
+<!ELEMENT div                       (head | u | note | event)*                                     >
+
+<!ELEMENT head                      (#PCDATA)                                                      >
+
+<!ELEMENT u                         (#PCDATA | vocal | shift | pause | event | unclear | u)*       >
+<!ATTLIST u                                    
+          who                        CDATA                                            #REQUIRED
+          n                          CDATA                                            #REQUIRED    >
+
+<!ELEMENT vocal                      EMPTY                                                         >
+<!ATTLIST vocal                                    
+          desc                       CDATA                                            #REQUIRED    > 
+
+<!ELEMENT shift                      EMPTY                                                         >
+<!ATTLIST shift                                    
+          feature                    CDATA                                            #REQUIRED                                    
+          new                        CDATA                                            #REQUIRED    >
+
+<!ELEMENT pause                      EMPTY                                                         >
+<!ATTLIST pause                                    
+          type                       CDATA                                            #IMPLIED     >
+
+<!ELEMENT event                      EMPTY                                                         >
+<!ATTLIST event                                    
+          desc                       CDATA                                            #REQUIRED    >
+
+<!ELEMENT unclear                    EMPTY                                                         >
+
+<!ELEMENT note                      (#PCDATA | unclear)*                                           >

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="exo6page.xsl"?>
+<exo>
+    <title>6. Regrouper des éléments</title>
+    <phase1>
+        <description>
+            Le fichier à traiter provient du corpus Prématurés00 : les infirmières (triées par ancienneté).
+            On veut désormais factoriser les informations sur les infirmières relevant d'une même classe d'ancienneté.
+            On utilise alors la possibilité avec XSLT d'examiner les frères aînés d'un nœud donné (de la même manière qu'on peut examiner les ascendants, les descendants).
+            Compléter la feuille de style ci-dessus pour que le résultat soit un tableau HTML avec un titre occupant toute la largeur du tableau pour chaque classe d'ancienneté, un titre pour chaque colonne et une ligne pour chaque infirmière.
+        </description>
+        <lien>Consultez le tableau</lien>
+        <fichierXml>Cliquez ici pour le fichier XML</fichierXml>
+        <fichierXsl>Cliquez ici pour le fichier XSLT</fichierXsl>
+    </phase1>
+</exo>

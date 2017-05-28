@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="exo8page.xsl"?>
+<exo>
+    <title>8. Air France</title>
+    <phase1 t="document et grammaire">
+        <title>Phase1.Document et Grammaire</title>
+        <description>
+          <p1>  - Modifier l'entête du document en y insérant vos références personnelles (nom, prénom, email, etc.)</p1>
+            <p2> - Vérifier la bonne formation du document</p2>
+        </description>
+        <fichierXml>Cliquez ici pour le fichier XML modifié</fichierXml>
+        <description2>
+           <p1> - Créer la DTD et établir le lien à la DTD</p1>
+           <p2> - Vérifier que le document est valide</p2>
+        </description2>
+        <dtd>
+            &lt;?xml encoding=&quot;UTF-8&quot;?&gt;
+            
+            &lt;!ELEMENT teiCorpus.2 (teiHeader,TEI.2+)&gt;
+            &lt;!ATTLIST teiCorpus.2
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT TEI.2 (teiHeader,text)&gt;
+            &lt;!ATTLIST TEI.2
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT teiHeader (auteurs?,fileDesc,
+            (encodingDesc,profileDesc,revisionDesc)?)&gt;
+            &lt;!ATTLIST teiHeader
+            xmlns CDATA #FIXED ''
+            creator NMTOKEN #IMPLIED
+            date.created NMTOKEN #IMPLIED&gt;
+            
+            &lt;!ELEMENT auteurs (referencesPersonnelles)+&gt;
+            &lt;!ATTLIST auteurs
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT fileDesc (titleStmt,extent?,publicationStmt,sourceDesc)&gt;
+            &lt;!ATTLIST fileDesc
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT encodingDesc (projectDesc,editorialDecl)&gt;
+            &lt;!ATTLIST encodingDesc
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT profileDesc (particDesc)&gt;
+            &lt;!ATTLIST profileDesc
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT revisionDesc (change)+&gt;
+            &lt;!ATTLIST revisionDesc
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT referencesPersonnelles (nom,prenom,email)&gt;
+            &lt;!ATTLIST referencesPersonnelles
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT titleStmt (title,(respStmt+,principal)?)&gt;
+            &lt;!ATTLIST titleStmt
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT extent (#PCDATA)&gt;
+            &lt;!ATTLIST extent
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT publicationStmt (availability,(distributor,date)?)&gt;
+            &lt;!ATTLIST publicationStmt
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT sourceDesc (p|(recordingStmt,scriptStmt))&gt;
+            &lt;!ATTLIST sourceDesc
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT projectDesc (p)&gt;
+            &lt;!ATTLIST projectDesc
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT editorialDecl (normalization)&gt;
+            &lt;!ATTLIST editorialDecl
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT particDesc (person)+&gt;
+            &lt;!ATTLIST particDesc
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT change (date,respStmt,item)&gt;
+            &lt;!ATTLIST change
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT nom (#PCDATA)&gt;
+            &lt;!ATTLIST nom
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT prenom (#PCDATA)&gt;
+            &lt;!ATTLIST prenom
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT email (#PCDATA)&gt;
+            &lt;!ATTLIST email
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT title (#PCDATA)&gt;
+            &lt;!ATTLIST title
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT principal (#PCDATA)&gt;
+            &lt;!ATTLIST principal
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT availability (p)&gt;
+            &lt;!ATTLIST availability
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT distributor (#PCDATA)&gt;
+            &lt;!ATTLIST distributor
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT recordingStmt (p)&gt;
+            &lt;!ATTLIST recordingStmt
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT scriptStmt (p)+&gt;
+            &lt;!ATTLIST scriptStmt
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT normalization (p)&gt;
+            &lt;!ATTLIST normalization
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT person (p)&gt;
+            &lt;!ATTLIST person
+            xmlns CDATA #FIXED ''
+            id NMTOKEN #REQUIRED
+            role NMTOKEN #REQUIRED&gt;
+            
+            &lt;!ELEMENT item (#PCDATA)&gt;
+            &lt;!ATTLIST item
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT text (group?,body?)&gt;
+            &lt;!ATTLIST text
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT group (text)+&gt;
+            &lt;!ATTLIST group
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT body (div)&gt;
+            &lt;!ATTLIST body
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT div (head?,(event|u|note)+)&gt;
+            &lt;!ATTLIST div
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT head (#PCDATA)&gt;
+            &lt;!ATTLIST head
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT note (#PCDATA|unclear)*&gt;
+            &lt;!ATTLIST note
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT respStmt (resp,name)&gt;
+            &lt;!ATTLIST respStmt
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT resp (#PCDATA)&gt;
+            &lt;!ATTLIST resp
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT name (#PCDATA)&gt;
+            &lt;!ATTLIST name
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT p (#PCDATA)&gt;
+            &lt;!ATTLIST p
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT date (#PCDATA)&gt;
+            &lt;!ATTLIST date
+            xmlns CDATA #FIXED ''
+            value NMTOKEN #IMPLIED&gt;
+            
+            &lt;!ELEMENT unclear EMPTY&gt;
+            &lt;!ATTLIST unclear
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT u (#PCDATA|event|u|unclear|pause|shift|vocal)*&gt;
+            &lt;!ATTLIST u
+            xmlns CDATA #FIXED ''
+            n CDATA #REQUIRED
+            who NMTOKEN #REQUIRED&gt;
+            
+            &lt;!ELEMENT pause EMPTY&gt;
+            &lt;!ATTLIST pause
+            xmlns CDATA #FIXED ''
+            type CDATA #IMPLIED&gt;
+            
+            &lt;!ELEMENT shift EMPTY&gt;
+            &lt;!ATTLIST shift
+            xmlns CDATA #FIXED ''
+            feature NMTOKEN #REQUIRED
+            new CDATA #REQUIRED&gt;
+            
+            &lt;!ELEMENT vocal EMPTY&gt;
+            &lt;!ATTLIST vocal
+            xmlns CDATA #FIXED ''
+            desc CDATA #REQUIRED&gt;
+            
+            &lt;!ELEMENT event EMPTY&gt;
+            &lt;!ATTLIST event
+            xmlns CDATA #FIXED ''
+            desc CDATA #REQUIRED&gt;
+            
+        </dtd>
+    </phase1>
+    <phase2 t="définir des requêtes xpath">
+        <title>Phase2.Définition des requêtes XPath</title>
+        <q1>
+        <description>
+            1.Rechercher les uttérances (associées aux élements &lt;u&gt;) de l’opérateur
+        </description>
+        <code>
+            //u[@who='O']
+        </code>
+        </q1>
+        <q2>
+        <description>
+            2.Rechercher les uttérances (associées aux élements &lt;u&gt;) du client
+        </description>
+        <code>
+            //u[@who='C']
+        </code>
+        </q2>
+        <q3>
+        <description>
+            3.Rechercher les uttérances (associées aux élements &lt;u&gt;) qui contiennent le mot "quand"
+        </description>
+        <code>
+            //u[contains(test()),'quand']
+        </code>
+        </q3>
+        <q4>
+        <description>
+            4.Rechercher les uttérances (associées aux élements &lt;u&gt;) qui contiennent le le caractère '?'
+        </description>
+        <code>
+            //u[text()[contains(., '?')]]
+        </code>
+        </q4>
+        <q5>
+        <description>
+            5.Rechercher les uttérances (associées aux élements &lt;u&gt;) qui précèdent celles qui contiennent le le caractère '?'
+        </description>
+        <code>
+            //u[following-sibling::u[1][text()[contains(., '?')]]]
+        </code>
+        </q5>
+    </phase2>
+    <phase3 t="transformation xslt">
+        <title>Phase3.Transformation XSLT</title>
+        <etape1>
+            <description>
+                Etape 1 :
+                Définir une feuille de styles minimale pour formater le document XML fourni en HTML :
+            </description>
+            <lien>Cliquez ici pour l'affichage de tout le contenu</lien>
+         
+            <fichierXsl>Cliquez ici pour la feuille de styles minimale</fichierXsl>
+            <description2>
+                Définir une feuille de styles permettant d’afficher les uttérances qui contiennent le mot "quand", avec :</description2>
+            <list>
+                <l>o uttéranceprécédente</l>
+                <l>o uttérancesuivante</l>
+                <l>o contextegauche(éventuellementtronqué) o contextedroit(éventuellementtronqué)</l>
+            </list>
+            <lien2>Affichage du contexte de "quand"</lien2>
+            
+            <fichierXsl2>Cliquez ici pour le fichier XSLT extrayant "quand"</fichierXsl2>
+        </etape1>
+        <etape2>
+            <description>
+                Etape 2 :
+                Définir une feuille de style permettant d’obtenir une copie à l'identique du fichier de départ avec marquage des occurrences de "ah", "ah bon", "ah oui" :
+            </description>
+            <fichierXslt>Cliquez ici pour le fichier XSLT</fichierXslt>
+            <resultatXml>Cliquez ici pour le fichier de résultat</resultatXml>
+        </etape2>
+    </phase3>
+</exo>

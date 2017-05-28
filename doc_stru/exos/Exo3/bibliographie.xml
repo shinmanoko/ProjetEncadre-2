@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "bibliographie.dtd">
+<document>
+    <livre avis_personnel="">
+       <titre>
+        Les miserables
+       </titre>
+        <contenu>
+            <tome nb_pages="100">La Fantine</tome>
+            <page>0-100</page>
+            <tome nb_pages="100">Cosette</tome>
+            <page>100-200</page>
+            <tome nb_pages="100">Marius</tome>
+            <page>200-300</page>
+            <tome nb_pages="100">Jean Valjean</tome>
+            <page>300-400</page>
+        </contenu>
+        <information>
+            <auteur>Victor Hugo</auteur>
+            <editeur>Ecole des loisirs</editeur>
+            <collection>Classique abrégé</collection>
+            <langue>français</langue>
+            <iban>211215351</iban>
+        </information>
+    </livre>
+    <article avis_personnel="">
+        <titre>
+            Une manifestation contre les «violences policières» émaillée d'incidents
+        </titre>
+        <auteur>
+            AFP agence
+        </auteur>
+        <journal>
+            Le figaro
+        </journal>
+        <Date_Publication>
+            19/03/2017 à 18:43
+        </Date_Publication>
+        <adresse>
+            http://www.lefigaro.fr/actualite-france/2017/03/19/01016-20170319ARTFIG00150-des-milliers-de-manifestants-a-paris-contre-les-violences-policieres.php
+        </adresse>
+      </article>
+</document>

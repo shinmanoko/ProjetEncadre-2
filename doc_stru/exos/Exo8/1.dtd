@@ -1,0 +1,198 @@
+<?xml encoding="UTF-8"?>
+
+<!ELEMENT teiCorpus.2 (teiHeader,TEI.2+)>
+<!ATTLIST teiCorpus.2
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT TEI.2 (teiHeader,text)>
+<!ATTLIST TEI.2
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT teiHeader (auteurs?,fileDesc,
+                     (encodingDesc,profileDesc,revisionDesc)?)>
+<!ATTLIST teiHeader
+  xmlns CDATA #FIXED ''
+  creator NMTOKEN #IMPLIED
+  date.created NMTOKEN #IMPLIED>
+
+<!ELEMENT auteurs (referencesPersonnelles)+>
+<!ATTLIST auteurs
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT fileDesc (titleStmt,extent?,publicationStmt,sourceDesc)>
+<!ATTLIST fileDesc
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT encodingDesc (projectDesc,editorialDecl)>
+<!ATTLIST encodingDesc
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT profileDesc (particDesc)>
+<!ATTLIST profileDesc
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT revisionDesc (change)+>
+<!ATTLIST revisionDesc
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT referencesPersonnelles (nom,prenom,email)>
+<!ATTLIST referencesPersonnelles
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT titleStmt (title,(respStmt+,principal)?)>
+<!ATTLIST titleStmt
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT extent (#PCDATA)>
+<!ATTLIST extent
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT publicationStmt (availability,(distributor,date)?)>
+<!ATTLIST publicationStmt
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT sourceDesc (p|(recordingStmt,scriptStmt))>
+<!ATTLIST sourceDesc
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT projectDesc (p)>
+<!ATTLIST projectDesc
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT editorialDecl (normalization)>
+<!ATTLIST editorialDecl
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT particDesc (person)+>
+<!ATTLIST particDesc
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT change (date,respStmt,item)>
+<!ATTLIST change
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT nom (#PCDATA)>
+<!ATTLIST nom
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT prenom (#PCDATA)>
+<!ATTLIST prenom
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT email (#PCDATA)>
+<!ATTLIST email
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT title (#PCDATA)>
+<!ATTLIST title
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT principal (#PCDATA)>
+<!ATTLIST principal
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT availability (p)>
+<!ATTLIST availability
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT distributor (#PCDATA)>
+<!ATTLIST distributor
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT recordingStmt (p)>
+<!ATTLIST recordingStmt
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT scriptStmt (p)+>
+<!ATTLIST scriptStmt
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT normalization (p)>
+<!ATTLIST normalization
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT person (p)>
+<!ATTLIST person
+  xmlns CDATA #FIXED ''
+  id NMTOKEN #REQUIRED
+  role NMTOKEN #REQUIRED>
+
+<!ELEMENT item (#PCDATA)>
+<!ATTLIST item
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT text (group?,body?)>
+<!ATTLIST text
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT group (text)+>
+<!ATTLIST group
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT body (div)>
+<!ATTLIST body
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT div (head?,(event|u|note)+)>
+<!ATTLIST div
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT head (#PCDATA)>
+<!ATTLIST head
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT note (#PCDATA|unclear)*>
+<!ATTLIST note
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT respStmt (resp,name)>
+<!ATTLIST respStmt
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT resp (#PCDATA)>
+<!ATTLIST resp
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT name (#PCDATA)>
+<!ATTLIST name
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT p (#PCDATA)>
+<!ATTLIST p
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT date (#PCDATA)>
+<!ATTLIST date
+  xmlns CDATA #FIXED ''
+  value NMTOKEN #IMPLIED>
+
+<!ELEMENT unclear EMPTY>
+<!ATTLIST unclear
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT u (#PCDATA|event|u|unclear|pause|shift|vocal)*>
+<!ATTLIST u
+  xmlns CDATA #FIXED ''
+  n CDATA #REQUIRED
+  who NMTOKEN #REQUIRED>
+
+<!ELEMENT pause EMPTY>
+<!ATTLIST pause
+  xmlns CDATA #FIXED ''
+  type CDATA #IMPLIED>
+
+<!ELEMENT shift EMPTY>
+<!ATTLIST shift
+  xmlns CDATA #FIXED ''
+  feature NMTOKEN #REQUIRED
+  new CDATA #REQUIRED>
+
+<!ELEMENT vocal EMPTY>
+<!ATTLIST vocal
+  xmlns CDATA #FIXED ''
+  desc CDATA #REQUIRED>
+
+<!ELEMENT event EMPTY>
+<!ATTLIST event
+  xmlns CDATA #FIXED ''
+  desc CDATA #REQUIRED>

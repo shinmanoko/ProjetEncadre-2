@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="exo3page.xsl"?>
+<exo>
+    <title>3.Bibliographie</title>
+    <description>
+        <p>Dans cet exercice, il concerne DTD. Il y a en total deux types de DTD: un à l’intérieur de XML; un autre à l’extérieur de XML lié par une déclaration dans fichier XML:</p>
+        <type1>
+            <name>
+                1.DTD à l’intérieur est écrit avant le contenu DTD: 
+            </name>
+            <exemple>
+                &lt;?xml version=&quot;1.0&quot;?&gt;
+                &lt;!DOCTYPE element de racine [declaration de l'element]&gt;
+                &lt;!DOCTYPE note [
+                &lt;!ELEMENT note (to,from,heading,body)&gt;
+                &lt;!ELEMENT to      (#PCDATA)&gt;
+                &lt;!ELEMENT from    (#PCDATA)&gt;
+                &lt;!ELEMENT heading (#PCDATA)&gt;
+                &lt;!ELEMENT body    (#PCDATA)&gt;
+                ]&gt;
+                &lt;note&gt;
+                &lt;to&gt;George&lt;/to&gt;
+                &lt;from&gt;John&lt;/from&gt;
+                &lt;heading&gt;Reminder&lt;/heading&gt;
+                &lt;body&gt;Don't forget the meeting!&lt;/body&gt;
+                &lt;/note&gt;
+            </exemple>
+        </type1>
+        
+        <type2>
+            <name>
+                2. DTD à l’extérieur,il faut ajouter la déclaration dans en-tête de fichier XML: 
+            </name>
+            <exemple>
+                &lt;!DOCTYPE 	element de racine	 SYSTEM 	&quot;nom de fichierDTD&quot;&gt;
+            </exemple>
+        </type2>
+    </description>
+    <phase1>
+        <title>Phase 1</title>
+        <txt>A notre avis, par apport à créer un DTD, créer un xml est plus simple, donc pour un DTD conformément aux demandes, on écrit d’abord  un fichier bibliographie.xml, puis à partir de ce dernier, avec l'outil dans Oxygen, il génére un fichier DTD:(comme il y a des problème à afficher le fichier DTD sur navigateur, on l'affiche ici)</txt>
+        <affiche>
+            &lt;!ELEMENT document (livre,article)&gt;
+            &lt;!ATTLIST document
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT livre (titre,contenu,information)&gt;
+            &lt;!ATTLIST livre
+            xmlns CDATA #FIXED ''
+            avis_personnel CDATA #REQUIRED&gt;
+            
+            &lt;!ELEMENT article (titre,auteur,journal,Date_Publication,adresse)&gt;
+            &lt;!ATTLIST article
+            xmlns CDATA #FIXED ''
+            avis_personnel CDATA #REQUIRED&gt;
+            
+            &lt;!ELEMENT contenu (page|tome)+&gt;
+            &lt;!ATTLIST contenu
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT information (auteur,editeur,collection,langue,iban)&gt;
+            &lt;!ATTLIST information
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT journal (#PCDATA)&gt;
+            &lt;!ATTLIST journal
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT Date_Publication (#PCDATA)&gt;
+            &lt;!ATTLIST Date_Publication
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT adresse (#PCDATA)&gt;
+            &lt;!ATTLIST adresse
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT page (#PCDATA)&gt;
+            &lt;!ATTLIST page
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT tome (#PCDATA)&gt;
+            &lt;!ATTLIST tome
+            xmlns CDATA #FIXED ''
+            nb_pages CDATA #REQUIRED&gt;
+            
+            &lt;!ELEMENT editeur (#PCDATA)&gt;
+            &lt;!ATTLIST editeur
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT collection (#PCDATA)&gt;
+            &lt;!ATTLIST collection
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT langue (#PCDATA)&gt;
+            &lt;!ATTLIST langue
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT iban (#PCDATA)&gt;
+            &lt;!ATTLIST iban
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT titre (#PCDATA)&gt;
+            &lt;!ATTLIST titre
+            xmlns CDATA #FIXED ''&gt;
+            
+            &lt;!ELEMENT auteur (#PCDATA)&gt;
+            &lt;!ATTLIST auteur
+            xmlns CDATA #FIXED ''&gt;
+        </affiche>
+    </phase1>
+    <phase2>
+        <title>Phase 2</title>
+        <txt>A la fin, on ajoute des modifications. Il faut attentions qu’il mieux de ne pas associer le fichier XML à DTD, puisque des modifications peuvent causer des erreurs, par exemple: faisant de l'élément tome un élément vide, mais dans le fichier XML, entre balises tome, il y a des contenus…donc, fermer le fichier XML.</txt>
+        <fichier>Cliquer ici pour fichier XML</fichier>
+    </phase2>
+</exo>

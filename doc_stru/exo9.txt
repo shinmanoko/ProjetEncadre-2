@@ -1,0 +1,35 @@
+1.1 Faire une brève présentation de JSON
+
+
+
+{"datasetid": "collections-du-musee-des-augustins-ville-de-toulouse",
+ "recordid": "518faffa26fd3404a1afa76f8859e639375edb65", 
+ "fields": 
+ {
+     "num_inventaire": "46 1 1",
+     "numero_acquisition": "1946.2",
+     "mode_acquisition": "Legs"
+     "donateur_vendeur": "LAUMOND-PEYRONNET, Mme  particulier",
+     "date_acqui": "1946-01-01",
+     "notes_aquisition": "Entr\u00e9 comme tableau fran\u00e7ais du XVII\u00e8me si\u00e8cle.",
+     "designation": "Nature morte", 
+     "designation_2": "tableau", 
+     "domaine": "Peinture", 
+     "inscription_type_1": "Inscription", 
+     "inscription_emplace": "revers", 
+     "matiere": "toile",
+     "technique": "peinture \u00e0 l'huile",
+     "mesure_1": "Hauteur : 74", 
+     "mesure_2": "Largeur : 107",
+     "precision_auteur_1": "Style de", 
+     "auteur_1": "FIERAVINO, Francesco",
+     "precision_auteur_2": "Ancienne attribution", 
+     "auteur_2": "Anonyme fran\u00e7ais", 
+     "datation_1": "1876-1900 ?", 
+     "datation_2": "1901-1950 ?",
+     "credit_photo": "\u00a9 Photo Bernard Delorme",
+     "localisation": "mus\u00e9e des Augustins",  
+           }, 
+           "record_timestamp": "2016-12-05T13:56:20+01:00"
+           
+},
